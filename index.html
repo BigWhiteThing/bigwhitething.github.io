@@ -1,31 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Launcher</title>
   <style>
     html, body {
       margin: 0;
-      padding: 0;
       height: 100%;
       overflow: hidden;
     }
 
     iframe {
-      position: fixed;
-      top: 0;
-      left: 0;
       width: 100vw;
       height: 100vh;
       border: none;
     }
   </style>
-
-  <script>
-    window.onload = () => {
-      window.open("about:blank", "_blank", "width=400,height=400");
-    };
-  </script>
 </head>
 <body>
-  <iframe src="https://unbker.hollands.id.au/"></iframe>
+
+<script>
+  const url = "https://unbker.hollands.id.au/"; // put your site here
+
+  // Try opening popup
+  const popup = window.open("about:blank", "_blank");
+
+  if (popup) {
+    // Popup allowed → load site inside it
+    popup.document.write(`
+      <html>
+        <head>
+          <title>Loading...</title>
+          <style>
+            html, body {
+              margin: 0;
+              height: 100%;
+              overflow: hidden;
+            }
+            iframe {
+              width: 100vw;
+              height: 100vh;
+              border: none;
+            }
+          </style>
+        </head>
+        <body>
+          <iframe src="${url}"></iframe>
+        </body>
+      </html>
+    `);
+    popup.document.close();
+
+    // Current tab becomes empty/harmless
+    document.body.innerHTML = "<h2>Popup opened.</h2>";
+  } 
+  else {
+    // Popup blocked → load the site normally
+    window.location.href = url;
+  }
+</script>
+
 </body>
 </html>
