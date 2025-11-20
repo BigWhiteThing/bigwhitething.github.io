@@ -19,13 +19,13 @@
 <body>
 
 <script>
-  const url = "https://unbker.hollands.id.au/"; // put your site here
+  const url = "https://unbker.hollands.id.au/"; // site you want to load
 
-  // Try opening popup
+  // Try to open popup
   const popup = window.open("about:blank", "_blank");
 
   if (popup) {
-    // Popup allowed → load site inside it
+    // Popup allowed → load site in new tab
     popup.document.write(`
       <html>
         <head>
@@ -50,14 +50,16 @@
     `);
     popup.document.close();
 
-    // Current tab becomes empty/harmless
-    document.body.innerHTML = "<h2>Popup opened.</h2>";
+    // Redirect original tab to Google
+    window.location.href = "https://www.google.com";
   } 
   else {
-    // Popup blocked → load the site normally
+    // Popup blocked → open site normally
     window.location.href = url;
   }
 </script>
 
 </body>
 </html>
+
+
