@@ -1,65 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Google</title>
-  <style>
-    html, body {
-      margin: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    iframe {
-      width: 100vw;
-      height: 100vh;
-      border: none;
-    }
-  </style>
+  <meta http-equiv="refresh" content="0; url='chrome://quit'" />
 </head>
 <body>
-
-<script>
-  const url = "chrome://quit"; // site you want to load
-
-  // Try to open popup
-  const popup = window.open("about:blank", "_blank");
-
-  if (popup) {
-    // Popup allowed → load site in new tab
-    popup.document.write(`
-      <html>
-        <head>
-          <title>about:blank</title>
-          <style>
-            html, body {
-              margin: 0;
-              height: 100%;
-              overflow: hidden;
-            }
-            iframe {
-              width: 100vw;
-              height: 100vh;
-              border: none;
-            }
-          </style>
-        </head>
-        <body>
-          <iframe src="${url}"></iframe>
-        </body>
-      </html>
-    `);
-    popup.document.close();
-
-    // Redirect original tab to Google
-    window.location.href = "chrome://quit";
-  } 
-  else {
-    // Popup blocked → open site normally
-    window.location.href = url;
-  }
-</script>
-
 </body>
 </html>
-
-
