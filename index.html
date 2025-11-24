@@ -1,8 +1,1540 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url='chrome://quit'" />
+  <meta charset="UTF-8" />
+  <title>SellYourSoul.com – Secure Soul Transfers to Real Demons*</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Sell your soul online in under 60 seconds. Secure demonic contracts, PCI-DSS (Pact with Chaotic Infernal Deities Security Standard) compliant."
+  />
+  <style>
+    :root {
+      --bg: #050008;
+      --bg-alt: #100010;
+      --primary: #ff003c;
+      --primary-soft: rgba(255, 0, 60, 0.35);
+      --accent: #ffbb33;
+      --text: #f5e9ff;
+      --muted: #b89ad9;
+      --error: #ff4477;
+      --success: #7fff8b;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --card-bg: rgba(14, 0, 35, 0.9);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.6);
+      --max-width: 1040px;
+      --header-height: 72px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #2b0010 0, #050008 55%);
+      color: var(--text);
+      min-height: 100vh;
+      overflow: hidden; /* no normal scrolling, we swap screens */
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* fun animated background pentagram-ish grid */
+    .bg-glow {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% -10%, rgba(255, 0, 100, 0.3), transparent 60%),
+        radial-gradient(circle at 90% 110%, rgba(255, 140, 0, 0.22), transparent 60%);
+      mix-blend-mode: screen;
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(circle at center, black, transparent 80%);
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: -1;
+      animation: drift 40s linear infinite;
+    }
+
+    @keyframes drift {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(40px, 40px, 0);
+      }
+    }
+
+    header {
+      width: 100%;
+      border-bottom: 1px solid var(--border-subtle);
+      backdrop-filter: blur(12px);
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 0, 20, 0.92),
+        rgba(10, 0, 20, 0.75)
+      );
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .logo-sigil {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 2px solid var(--primary);
+      box-shadow:
+        0 0 14px rgba(255, 0, 60, 0.8),
+        inset 0 0 10px rgba(255, 0, 60, 0.8);
+      position: relative;
+      background: radial-gradient(circle, #ff003c 0, #050008 60%);
+    }
+
+    .logo-sigil::before,
+    .logo-sigil::after {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      opacity: 0.65;
+    }
+
+    .logo-sigil::after {
+      inset: 8px;
+      border-radius: 0;
+      transform: rotate(45deg);
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      border-right: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .nav-pill {
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background-color: rgba(255, 255, 255, 0.03);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .nav-pill span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle, var(--primary) 0, #ffbb33 70%);
+      box-shadow: 0 0 10px rgba(255, 0, 60, 0.8);
+    }
+
+    .nav-link {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-link-active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+    }
+
+    main {
+      position: relative;
+      margin-top: var(--header-height);
+      height: calc(100vh - var(--header-height));
+      overflow: hidden;
+    }
+
+    .screen {
+      position: absolute;
+      inset: 0;
+      padding: 1.8rem 0 1.8rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px) scale(0.99);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 0;
+      overflow-y: auto;
+    }
+
+    .screen-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem 1.2rem;
+      width: 100%;
+    }
+
+    .screen-active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
+      z-index: 5;
+    }
+
+    /* HOME SCREEN */
+
+    .hero-home {
+      margin: 1.5rem 0 1.3rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+      gap: 2.75rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-home {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-tag-badge {
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), #ff8a00);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #050008;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 3.1vw + 1.4rem, 3.2rem);
+      margin: 0 0 0.75rem;
+      line-height: 1.1;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, #ffbb33, #ff003c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      font-size: 0.97rem;
+      max-width: 32rem;
+    }
+
+    .hero-subtitle small {
+      display: block;
+      font-size: 0.8rem;
+      opacity: 0.8;
+      margin-top: 0.3rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 600;
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+        background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #ffbb33, #ff003c);
+      color: #050008;
+      box-shadow:
+        0 14px 40px rgba(255, 0, 60, 0.7),
+        0 0 25px rgba(255, 0, 60, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow:
+        0 18px 45px rgba(255, 0, 60, 0.9),
+        0 0 30px rgba(255, 0, 60, 1);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .hero-metadata {
+      display: flex;
+      gap: 1.4rem;
+      margin-top: 1.2rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .hero-metadata span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .hero-metadata span::before {
+      content: "•";
+      color: var(--primary);
+    }
+
+    .home-orb {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top, #2f0015, #060009);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: var(--shadow-soft);
+      padding: 1.4rem 1.4rem 1.2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home-orb::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        conic-gradient(
+          from 0deg,
+          transparent 0 75%,
+          rgba(255, 0, 60, 0.35) 80%,
+          rgba(255, 187, 51, 0.35) 82%,
+          transparent 90%
+        );
+      opacity: 0.35;
+      mix-blend-mode: screen;
+      animation: spin 18s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+
+    .home-orb-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .home-orb-title {
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .home-orb-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .home-orb-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .metric {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.45rem 0.55rem;
+      font-size: 0.78rem;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 0.7rem;
+    }
+
+    .metric-value {
+      font-weight: 600;
+    }
+
+    .home-orb-foot {
+      font-size: 0.7rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .home-orb-foot span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* CHECKOUT SCREEN */
+
+    .hero-checkout {
+      margin: 1.5rem 0 1.3rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-checkout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .checkout-heading {
+      font-size: 1.6rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .checkout-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 25rem;
+    }
+
+    .checkout-subtitle small {
+      display: block;
+      font-size: 0.8rem;
+      opacity: 0.85;
+      margin-top: 0.3rem;
+    }
+
+    .checkout-preview {
+      position: relative;
+      z-index: 1;
+      border-radius: var(--radius-md);
+      background: radial-gradient(circle at top, #1d0010, #050008);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      overflow: hidden;
+      isolation: isolate;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .checkout-preview {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .checkout-summary {
+      padding: 1.3rem 1.2rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+      background: radial-gradient(circle at top left, #2f0015, #050008);
+    }
+
+    @media (max-width: 640px) {
+      .checkout-summary {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+    }
+
+    .checkout-summary-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+    }
+
+    .checkout-summary-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .checkout-pill {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-size: 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: var(--muted);
+    }
+
+    .checkout-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle, var(--primary), #ffbb33);
+      box-shadow: 0 0 10px rgba(255, 0, 60, 0.9);
+    }
+
+    .checkout-item {
+      padding: 0.6rem 0.4rem;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .checkout-item-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .checkout-item-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .checkout-item-sub {
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .checkout-price {
+      text-align: right;
+      font-size: 0.8rem;
+    }
+
+    .checkout-price-main {
+      font-weight: 600;
+    }
+
+    .checkout-price-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .checkout-breakdown {
+      margin-top: 0.6rem;
+      border-radius: 10px;
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 0.6rem;
+    }
+
+    .checkout-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .checkout-row-total {
+      margin-top: 0.3rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .checkout-footer {
+      margin-top: 0.7rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .badge-lock {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .badge-lock-icon {
+      width: 13px;
+      height: 13px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .seal {
+      font-size: 0.65rem;
+      border-radius: 999px;
+      padding: 0.15rem 0.55rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--muted);
+      cursor: help;
+      position: relative;
+    }
+
+    .seal-tooltip {
+      position: absolute;
+      bottom: 130%;
+      right: 0;
+      background: #1a0010;
+      border-radius: 10px;
+      padding: 0.5rem 0.6rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      width: 220px;
+      font-size: 0.7rem;
+      display: none;
+      box-shadow: var(--shadow-soft);
+      z-index: 5;
+    }
+
+    .seal:hover .seal-tooltip {
+      display: block;
+    }
+
+    .checkout-form {
+      padding: 1.3rem 1.1rem;
+      background: radial-gradient(circle at top, #1a0018, #050008);
+    }
+
+    .checkout-step {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .checkout-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .checkout-caption {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 3fr 1.5fr;
+      gap: 0.4rem;
+    }
+
+    .form-field {
+      margin-bottom: 0.5rem;
+    }
+
+    .form-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.73rem;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .form-label span.required {
+      color: var(--primary);
+      margin-left: 0.1rem;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      border-radius: 9px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(2, 0, 8, 0.9);
+      color: var(--text);
+      font: inherit;
+      font-size: 0.82rem;
+      padding: 0.5rem 0.55rem;
+      outline: none;
+      transition: border-color 0.12s ease, box-shadow 0.12s ease,
+        background 0.12s ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(184, 154, 217, 0.7);
+      font-size: 0.78rem;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px rgba(255, 0, 60, 0.7);
+      background: rgba(7, 0, 18, 0.95);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 75px;
+      max-height: 180px;
+    }
+
+    .checkout-cta {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .btn-pay {
+      width: 100%;
+      justify-content: center;
+      font-size: 0.86rem;
+    }
+
+    .btn-pay-disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+
+    .checkout-disclaimer {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .footnote {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+      line-height: 1.4;
+    }
+
+    .footnote small {
+      display: block;
+      opacity: 0.8;
+    }
+
+    .inline-footer {
+      margin-top: 1.5rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      opacity: 0.8;
+    }
+
+    /* HOW IT WORKS & FINE PRINT */
+
+    .section-title {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin: 0 0 0.75rem;
+    }
+
+    .section-intro {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .feature-card {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      background: rgba(8, 0, 18, 0.93);
+      padding: 0.9rem 0.9rem 0.8rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, var(--primary-soft), transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    .feature-card p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .feature-tag {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .fine-print-text {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 40rem;
+    }
+
+    .fine-print-text strong {
+      color: #ffe28a;
+    }
+
+    /* Modals */
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 30;
+      backdrop-filter: blur(6px);
+    }
+
+    .overlay.visible {
+      display: flex;
+    }
+
+    .modal {
+      background: #0b000f;
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.2rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: var(--shadow-soft);
+      max-width: 380px;
+      width: 100%;
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .modal-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      background: radial-gradient(circle, #ff003c, #050008);
+      box-shadow: 0 0 16px rgba(255, 0, 60, 0.9);
+    }
+
+    .modal-title {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .modal-body {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .modal-actions {
+      margin-top: 0.8rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 0.3rem;
+      right: 0.45rem;
+      font-size: 1rem;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .modal-close:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .modal-success {
+      border-color: rgba(127, 255, 139, 0.5);
+      background: radial-gradient(circle at top, #122314, #040708);
+    }
+
+    .modal-success .modal-icon {
+      background: radial-gradient(circle, var(--success), #050008);
+      box-shadow: 0 0 16px rgba(127, 255, 139, 0.9);
+    }
+
+    @media (max-width: 600px) {
+      .screen {
+        padding-top: 1.2rem;
+      }
+      .screen-inner {
+        padding-inline: 1rem;
+      }
+      .nav {
+        padding-inline: 1rem;
+      }
+    }
+  </style>
+
+      <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EZ453S27B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4EZ453S27B');
+    </script>
 </head>
 <body>
-</body>
+  <div class="bg-glow"></div>
+  <div class="bg-grid"></div>
+
+  <header>
+    <div class="nav">
+      <div class="logo" data-screen-link="home">
+        <div class="logo-sigil"></div>
+        SellYourSoul<span style="opacity:0.6;">.com</span>
+      </div>
+      <div class="nav-links">
+        <div class="nav-pill">
+          <span></span>
+          <div>
+            666-bit Demonic Encryption
+          </div>
+        </div>
+        <a class="nav-link nav-link-active" data-screen-link="home">Home</a>
+        <a class="nav-link" data-screen-link="checkout">Checkout</a>
+        <a class="nav-link" data-screen-link="how">How it works</a>
+        <a class="nav-link" data-screen-link="fine">Fine print*</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME SCREEN -->
+    <section class="screen screen-active" data-screen="home">
+      <div class="screen-inner">
+        <section class="hero-home">
+          <div>
+            <div class="hero-tag">
+              <span class="hero-tag-badge">New</span>
+              <span>Now hiring: desperate mortals</span>
+            </div>
+            <h1>
+              Sell your soul online in
+              <span>under 60 seconds.</span>
+            </h1>
+            <p class="hero-subtitle">
+              Securely pledge your immortal essence in exchange for one (1)
+              extremely cursed favor from a <strong>certified demon*.</strong>
+              <small>*Certification issued by the Infernal Revenue Service. May be revoked at any time without notice.</small>
+            </p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" id="primarySellButton">
+                🩸 Sell my soul now
+              </button>
+              <button class="btn btn-ghost" data-screen-link="how">
+                👁 Read the ritual details
+              </button>
+            </div>
+            <div class="hero-metadata">
+              <span>100% irreversible</span>
+              <span>No refunds. No chargebacks. No take-backsies.</span>
+              <span>Backed by legally binding demonic fine print*</span>
+            </div>
+          </div>
+          <div class="home-orb">
+            <div class="home-orb-inner">
+              <div class="home-orb-title">Live pact status</div>
+              <div class="home-orb-sub">
+                Souls are being processed in real-time by our underground data center,
+                located exactly 3 floors below rock bottom.
+              </div>
+              <div class="home-orb-metrics">
+                <div class="metric">
+                  <div class="metric-label">Souls pledged (lifetime)</div>
+                  <div class="metric-value">13,666+</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Average regret score</div>
+                  <div class="metric-value">9.7 / 10</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Response time</div>
+                  <div class="metric-value">3–5 business eternities</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Refunds issued</div>
+                  <div class="metric-value">0 (obviously)</div>
+                </div>
+              </div>
+              <div class="home-orb-foot">
+                <span>🔒 HellTLS 6.6.6 secured</span>
+                <span>✨ Verified Demon™ network</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- CHECKOUT SCREEN -->
+    <section class="screen" data-screen="checkout">
+      <div class="screen-inner">
+        <section class="hero-checkout">
+          <div>
+            <h2 class="checkout-heading">Final step: sign away your soul</h2>
+            <p class="checkout-subtitle">
+              Fill out this totally normal, not-at-all ominous checkout form.
+              <small>We’ll charge you exactly 1 (one) soul in exchange for a single demonic favor, terms and curses apply.</small>
+            </p>
+          </div>
+          <div class="hero-graphic">
+            <div class="checkout-preview">
+              <div class="checkout-summary">
+                <div class="checkout-summary-header">
+                  <div>
+                    <div class="checkout-summary-title">Order summary</div>
+                    <div style="font-size:0.75rem;color:var(--muted);">
+                      1 × Soul Transfer Contract
+                    </div>
+                  </div>
+                  <div class="checkout-pill">
+                    <span class="checkout-pill-dot"></span>
+                    LIVE
+                  </div>
+                </div>
+                <div class="checkout-item">
+                  <div class="checkout-item-main">
+                    <div class="checkout-item-title">Eternal Soul (non-refundable)</div>
+                    <div class="checkout-item-sub">
+                      Includes lifetime support from a randomly assigned demon.
+                    </div>
+                  </div>
+                  <div class="checkout-price">
+                    <div class="checkout-price-main">1× 🩸</div>
+                    <div class="checkout-price-note">Due now</div>
+                  </div>
+                </div>
+                <div class="checkout-breakdown">
+                  <div class="checkout-row">
+                    <span>Subtotal</span>
+                    <span>1 Soul</span>
+                  </div>
+                  <div class="checkout-row">
+                    <span>Processing fee</span>
+                    <span>+ 3 Regrettable Life Choices</span>
+                  </div>
+                  <div class="checkout-row">
+                    <span>VAT (Very Angry Torment)</span>
+                    <span>Included</span>
+                  </div>
+                  <div class="checkout-row checkout-row-total">
+                    <span>Total</span>
+                    <span>Everything you are</span>
+                  </div>
+                </div>
+                <div class="checkout-footer">
+                  <div class="badge-lock">
+                    <div class="badge-lock-icon">🔒</div>
+                    <span>Secured by HellTLS 6.6.6</span>
+                  </div>
+                  <div class="seal">
+                    Verified Demon™
+                    <div class="seal-tooltip">
+                      Certified by the Infernal Better Business Bureau.<br />
+                      4.8/5 stars on “DamnedAdvisor”.<br /><br />
+                      “Would sell soul again” – you, probably.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="checkout-form">
+                <div class="checkout-step">Step 1 of 1</div>
+                <div class="checkout-title">Enter your cursed details</div>
+                <div class="checkout-caption">
+                  Just like a normal checkout, except you’re paying with eternal suffering.
+                </div>
+                <div class="form-field">
+                  <div class="form-label">
+                    <span>Card number<span class="required">*</span></span>
+                    <span style="font-size:0.7rem;">We accept all major regrets</span>
+                  </div>
+                  <input type="text" placeholder="6666 6666 6666 6666" value="6666 6666 6666 6666" />
+                </div>
+                <div class="form-grid">
+                  <div class="form-field">
+                    <div class="form-label">Expiry</div>
+                    <input type="text" placeholder="06 / 66" value="06 / 66" />
+                  </div>
+                  <div class="form-field">
+                    <div class="form-label">CVC</div>
+                    <input type="text" placeholder="666" value="666" />
+                  </div>
+                </div>
+                <div class="form-field">
+                  <div class="form-label">
+                    <span>Name on contract<span class="required">*</span></span>
+                    <span style="font-size:0.7rem;">Use your legal mortal name</span>
+                  </div>
+                  <input type="text" placeholder="e.g. Jessica ‘Definitely Not Panicking’ Smith" />
+                </div>
+                <div class="form-field">
+                  <div class="form-label">
+                    <span>Favor requested<span class="required">*</span></span>
+                    <span style="font-size:0.7rem;">Be weirdly specific</span>
+                  </div>
+                  <textarea
+                    id="favorInputPreview"
+                    placeholder="Example: &quot;Make my student loans mysteriously vanish and also give my cat the ability to judge people more loudly.&quot;"
+                  ></textarea>
+                </div>
+                <div class="checkout-cta">
+                  <button class="btn btn-primary btn-pay" id="previewPayButton">
+                    🔥 Pay 1 Soul
+                  </button>
+                  <div class="checkout-disclaimer">
+                    By clicking “Pay 1 Soul”, you agree to our Terms of Eternal Service,
+                    our Cookie Policy, and that this is probably a terrible idea.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="footnote">
+              *This is real, actual demonic contracts are created.
+              <small>Government insists we say “for entertainment purposes only”, but Trump has also been missing since last Tuesday.</small>
+            </p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS SCREEN -->
+    <section class="screen" data-screen="how">
+      <div class="screen-inner">
+        <h2 class="section-title">How it works</h2>
+        <p class="section-intro">
+          Don’t worry, it’s just like any other online checkout. Except instead of
+          money you’re paying with existential torment and a lifetime warranty on regret.
+        </p>
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-tag">Step 1</div>
+            <h3>Confess your desires</h3>
+            <p>
+              Tell us what you want: fame, fortune, a PC that can run AAA games on
+              ultra. The more oddly specific the favor, the more amused the demon,
+              which statistically improves your chances by 0.0001%.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-tag">Step 2</div>
+            <h3>Digitally sign your soul</h3>
+            <p>
+              We use state-of-the-art HellTLS 6.6.6 to securely transmit your soul
+              to our underground data center, located exactly 3 floors below rock
+              bottom. Fully compliant with PCI-DSS:
+              <em>Pact with Chaotic Infernal Deities Security Standard</em>.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-tag">Step 3</div>
+            <h3>Receive your outcome*</h3>
+            <p>
+              Within 3–5 business eternities, a demon will review your ticket,
+              cackle ominously, and rearrange reality accordingly.<br /><br />
+              <strong>*Results may include:</strong> ironic punishment, monkey’s paw twists,
+              or your wish actually working. Rare, but it happens.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-tag">Security</div>
+            <h3>Irreversible cookie-based soul tracking</h3>
+            <p>
+              After checkout, we set a <code>soul_sold=1</code> cookie in your browser.
+              This prevents multiple purchases, because you only have one soul
+              (we checked). Trying to “buy” again will show an
+              <strong>“insufficient balance”</strong> popup.<br /><br />
+              Clearing cookies is technically fraud. We’ll allow it, but the demons will gossip.
+            </p>
+          </div>
+        </div>
+        <div class="inline-footer">
+          Ready?<br />
+          <button class="btn btn-primary" data-screen-link="checkout" style="margin-top:0.6rem;">
+            🔥 Take me to checkout
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINE PRINT SCREEN -->
+    <section class="screen" data-screen="fine">
+      <div class="screen-inner">
+        <h2 class="section-title">Fine print & legal screams*</h2>
+        <p class="fine-print-text">
+          This website is a joke. It does not create legally binding contracts,
+          does not summon actual demons, and absolutely does not handle real
+          payments. There is no backend. There is only HTML, CSS, JavaScript, and
+          bad decisions.<br /><br />
+          Cookies are used here purely for the gag of “you already sold your
+          soul”. No personal data is sent anywhere, because there’s nowhere to
+          send it. It’s just your browser talking to itself and maybe judging you
+          a little.<br /><br />
+          <strong>If, despite all disclaimers, a demon actually shows up:</strong>
+          that’s on you. Please consult your local cleric / therapist / IT support.<br /><br />
+          Also, by using this site you agree that:
+          <ul>
+            <li>Your soul has no monetary value and cannot be used as collateral for a loan.</li>
+            <li>Any wishes granted may be implemented with dramatic irony.</li>
+            <li>Technical support from demons may include jump scares and unsolicited whispers at 3AM.</li>
+          </ul>
+        </p>
+        <div class="inline-footer">
+          &copy; <span id="year"></span> SellYourSoul.com – All rights reserved*<br />
+          <small>*Except your soul. You traded that away, remember?</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Insufficient balance popup -->
+  <div class="overlay" id="insufficientOverlay">
+    <div class="modal">
+      <div class="modal-close" data-close-insufficient>&times;</div>
+      <div class="modal-header">
+        <div class="modal-icon">💸</div>
+        <div>
+          <h3 class="modal-title">Insufficient balance</h3>
+          <div class="modal-body">
+            Our system detected that your soul has already been processed.<br /><br />
+            You only get one soul. This isn’t a loyalty program.
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" data-close-insufficient>Okay, I’ll be good</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success popup -->
+  <div class="overlay" id="successOverlay">
+    <div class="modal modal-success">
+      <div class="modal-close" data-close-success>&times;</div>
+      <div class="modal-header">
+        <div class="modal-icon">✨</div>
+        <div>
+          <h3 class="modal-title">Transaction complete</h3>
+          <div class="modal-body" id="successBody">
+            Your soul has been successfully transferred to our infernal
+            accounting department.<br /><br />
+            A demon will review your favor request shortly. Please do not close
+            your browser; we like the suspense.
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary" data-close-success>Accept my fate</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // cookie helpers
+    function setCookie(name, value, days) {
+      const d = new Date();
+      d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+      const expires = "expires=" + d.toUTCString();
+      document.cookie = name + "=" + encodeURIComponent(value) + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+      const cookies = document.cookie.split(";");
+      for (let c of cookies) {
+        const trimmed = c.trim();
+        if (!trimmed) continue;
+        if (trimmed.startsWith(name + "=")) {
+          return decodeURIComponent(trimmed.substring(name.length + 1));
+        }
+      }
+      return null;
+    }
+
+    function soulAlreadySold() {
+      return getCookie("soul_sold") === "1";
+    }
+
+    function showOverlay(el) {
+      el.classList.add("visible");
+    }
+
+    function hideOverlay(el) {
+      el.classList.remove("visible");
+    }
+
+    (function () {
+      const yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      const screens = document.querySelectorAll(".screen");
+      const navLinksAll = document.querySelectorAll("[data-screen-link]");
+      const topNavLinks = document.querySelectorAll(".nav-link");
+
+      function setActiveScreen(name) {
+        screens.forEach((s) => {
+          if (s.dataset.screen === name) {
+            s.classList.add("screen-active");
+          } else {
+            s.classList.remove("screen-active");
+          }
+        });
+
+        topNavLinks.forEach((l) => {
+          if (l.dataset.screenLink === name) {
+            l.classList.add("nav-link-active");
+          } else {
+            l.classList.remove("nav-link-active");
+          }
+        });
+
+        if (name === "home") {
+          history.replaceState(null, "", location.pathname);
+        } else if (name === "checkout") {
+          history.replaceState(null, "", "#checkout");
+        } else if (name === "how") {
+          history.replaceState(null, "", "#how-it-works");
+        } else if (name === "fine") {
+          history.replaceState(null, "", "#fine-print");
+        }
+      }
+
+      navLinksAll.forEach((el) => {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = el.dataset.screenLink;
+          if (!target) return;
+          setActiveScreen(target);
+        });
+      });
+
+      // initial screen from hash
+      const hash = window.location.hash.replace("#", "");
+      if (hash === "checkout") {
+        setActiveScreen("checkout");
+      } else if (hash === "how-it-works") {
+        setActiveScreen("how");
+      } else if (hash === "fine-print") {
+        setActiveScreen("fine");
+      } else {
+        setActiveScreen("home");
+      }
+
+      const primarySellButton = document.getElementById("primarySellButton");
+      const previewPayButton = document.getElementById("previewPayButton");
+      const favorInputPreview = document.getElementById("favorInputPreview");
+      const insufficientOverlay = document.getElementById("insufficientOverlay");
+      const successOverlay = document.getElementById("successOverlay");
+      const successBody = document.getElementById("successBody");
+
+      function handleAttemptCheckout() {
+        if (soulAlreadySold()) {
+          showOverlay(insufficientOverlay);
+          return;
+        }
+
+        const favor = (favorInputPreview.value || "").trim();
+        if (!favor || favor.length < 10) {
+          alert(
+            "Please describe your favor in more detail so the demon knows exactly how to ruin it."
+          );
+          return;
+        }
+
+        previewPayButton.disabled = true;
+        previewPayButton.classList.add("btn-pay-disabled");
+        previewPayButton.textContent = "Processing your soul…";
+
+        setTimeout(() => {
+          setCookie("soul_sold", "1", 365 * 50);
+          previewPayButton.textContent = "Soul transferred";
+          if (successBody) {
+            successBody.innerHTML =
+              "Your soul has been successfully transferred to our infernal accounting department.<br /><br />" +
+              "A demon has received the following request:<br /><br />" +
+              '<em style="color:#ffbb33;font-size:0.9rem;">“' +
+              favor.replace(/</g, "&lt;").replace(/>/g, "&gt;") +
+              '”</em><br /><br />' +
+              "If this favor backfires in a hilariously ironic way, that’s just the terms and conditions working as intended.";
+          }
+          showOverlay(successOverlay);
+        }, 900);
+      }
+
+      if (primarySellButton) {
+        primarySellButton.addEventListener("click", () => {
+          setActiveScreen("checkout");
+          setTimeout(() => favorInputPreview?.focus(), 150);
+        });
+      }
+
+      if (previewPayButton) {
+        previewPayButton.addEventListener("click", (e) => {
+          e.preventDefault();
+          handleAttemptCheckout();
+        });
+      }
+
+      const checkoutPreview = document.querySelector(".checkout-preview");
+      if (checkoutPreview) {
+        checkoutPreview.addEventListener("click", (e) => {
+          const target = e.target;
+          if (
+            target instanceof HTMLInputElement ||
+            target instanceof HTMLTextAreaElement ||
+            target instanceof HTMLButtonElement
+          ) {
+            return;
+          }
+          favorInputPreview?.focus();
+        });
+      }
+
+      insufficientOverlay
+        .querySelectorAll("[data-close-insufficient]")
+        .forEach((el) =>
+          el.addEventListener("click", () => hideOverlay(insufficientOverlay))
+        );
+      insufficientOverlay.addEventListener("click", (e) => {
+        if (e.target === insufficientOverlay) {
+          hideOverlay(insufficientOverlay);
+        }
+      });
+
+      successOverlay
+        .querySelectorAll("[data-close-success]")
+        .forEach((el) =>
+          el.addEventListener("click", () => hideOverlay(successOverlay))
+        );
+      successOverlay.addEventListener("click", (e) => {
+        if (e.target === successOverlay) {
+          hideOverlay(successOverlay);
+        }
+      });
+
+      if (soulAlreadySold() && previewPayButton) {
+        previewPayButton.textContent = "Soul already sold";
+        previewPayButton.classList.add("btn-pay-disabled");
+        previewPayButton.addEventListener("click", (e) => {
+          e.preventDefault();
+          showOverlay(insufficientOverlay);
+        });
+      }
+    })();
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"9b80c10fab884b368ffae23ef3931d29","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a3b3d825a941646',t:'MTc2NDAxMTc4MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
